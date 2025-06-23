@@ -11,7 +11,7 @@ The architecture will look like this:
 
 ![alt text](/diagrams/workshop-1-low-level.drawio.svg)
 
-### Content:
+### Content
 
 - [Creating _create-user_ function](4.1-creating-create-user-function)
 - [Creating _list-users_ function](4.2-creating-list-users-function)

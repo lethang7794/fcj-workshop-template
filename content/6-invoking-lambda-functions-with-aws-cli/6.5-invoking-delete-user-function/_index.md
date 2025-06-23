@@ -5,6 +5,9 @@ chapter: false
 pre: " <b> 6.5. </b> "
 ---
 
+> [!NOTE]
+> Remember to update the **function name** and the **id** of user with `Nguyen Van Dong` name.
+
 1. Run
 
    ```shell
@@ -14,12 +17,6 @@ pre: " <b> 6.5. </b> "
        --payload '{ "id": "6c539686-de1c-4bef-85ef-f68a4b5aabe0" }' \
        response.json
    ```
-
-> [!NOTE]
-> Remember to update
->
-> - the **function name** (function ARN)
-> - the **id** of user with `Nguyen Van Dong` name.
 
 2. Check the response
 

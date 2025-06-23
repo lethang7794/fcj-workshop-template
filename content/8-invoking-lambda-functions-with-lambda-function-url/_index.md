@@ -25,7 +25,7 @@ pre: " <b> 8. </b> "
 
   ![alt text](/diagrams/workshop-1-function-urls.drawio.svg)
 
-### Content:
+### Content
 
 - [Invoking _create-user_ function with Lambda function URL](8.1-invoking-create-user-function)
 - [Invoking _list-user_ function with Lambda function URL](8.2-invoking-list-user-function)

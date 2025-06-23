@@ -5,6 +5,9 @@ chapter: false
 pre: " <b> 6.2. </b> "
 ---
 
+> [!NOTE]
+> Replace `ap-southeast-1` with your AWS region, `971422684006` with your AWS account number, or replace the whole `arn:aws:lambda:ap-southeast-1:971422684006:function:list-users` with the function ARN from the management console.
+
 1. Run
 
    ```shell
@@ -12,11 +15,6 @@ pre: " <b> 6.2. </b> "
        --function-name arn:aws:lambda:ap-southeast-1:971422684006:function:list-users \
        response.json
    ```
-
-> [!NOTE]
-> Replace `ap-southeast-1` with your AWS region, `971422684006` with your AWS account number.
->
-> Or replace the whole `arn:aws:lambda:ap-southeast-1:971422684006:function:list-users` with the function ARN from the management console.
 
 2. If the terminal shows:
 
