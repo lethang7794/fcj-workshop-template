@@ -5,6 +5,12 @@ chapter: false
 pre: " <b> 4. </b> "
 ---
 
+In this step we will create 5 Lambda functions corresponding with CRUDL.
+
+The architecture will look like this:
+
+![alt text](/diagrams/workshop-1-low-level.drawio.svg)
+
 ### Content:
 
 - [Creating _create-user_ function](4.1-creating-create-user-function)

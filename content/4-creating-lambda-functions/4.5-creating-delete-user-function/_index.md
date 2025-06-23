@@ -5,7 +5,7 @@ chapter: false
 pre: " <b> 4.5. </b> "
 ---
 
-Repeat the steps in [creating `create-users` function](#creating-create-user-function), with the following differences:
+Repeat the steps in [creating `create-users` function](/4-creating-lambda-functions/4.1-creating-create-user-function/), with the following differences:
 
 1. Function name: `delete-user`
 1. The code
@@ -70,7 +70,3 @@ Repeat the steps in [creating `create-users` function](#creating-create-user-fun
 At this point, check [Functions section of Lambda console](https://console.aws.amazon.com/lambda/home?#/functions) and verify you have 5 Lambda functions.
 
 ![alt text](/images/workshop-1/lambda--list-functions.png)
-
-The architecture now looks like this:
-
-![alt text](/diagrams/workshop-1-low-level.drawio.svg)

@@ -5,7 +5,7 @@ chapter: false
 pre: " <b> 4.2. </b> "
 ---
 
-Repeat the steps in [creating `create-users` function](#creating-create-user-function), with the following differences:
+Repeat the steps in [creating `create-users` function](/4-creating-lambda-functions/4.1-creating-create-user-function/), with the following differences:
 
 1. Function name: `list-users`
 1. The code
