@@ -15,7 +15,7 @@ There is this header at the top of every page to display the **title** and defin
 
 - `title = "Write content"`
 - `chapter = false` : Leave the default as false. The title above will also display as h1 in the article.
-- `weiht`: Used to sort the index of the title
+- `weight`: Used to sort the index of the title
 - `pre = "<b>2. </b>"` : This is the numbering for the page displayed in **Navigation panel on the left**.
 
 ```

@@ -7,10 +7,12 @@
 }}
 
 {{ if eq .Type "alert" }}
-  <div class="notices {{ .AlertType }}">{{ .Text }}</div>
+  {{ $alertClass := .AlertType }}
+  {{ if eq .AlertType "important" }}{{ $alertClass = "info" }}{{ end }}
+  {{ if eq .AlertType "caution" }}{{ $alertClass = "warning" }}{{ end }}
+  <div class="notices {{ $alertClass }}">{{ .Text }}</div>
 {{ else }}
   <blockquote>
     {{ .Text }}
   </blockquote>
 {{ end }}
-
