@@ -7,7 +7,8 @@ pre: " <b> 4. </b> "
 
 ### Content:
 
-- [Update IAM Role](./4.1-updateiamrole/)
-- [Create **S3 Bucket**](./4.2-creates3bucket/)
-- [Create S3 Gateway endpoint](./4.3-creategwes3)
-- [Configure **Session logs**](./4.4-configsessionlogs/)
+- [Creating _create-user_ function](4.1-creating-create-user-function)
+- [Creating _list-users_ function](4.2-creating-list-users-function)
+- [Creating _get-user_ function](4.3-creating-get-user-function)
+- [Creating _update-user_ function](4.4-creating-update-user-function)
+- [Creating _delete-user_ function](4.5-creating-delete-user-function)
