@@ -5,6 +5,8 @@ chapter: false
 pre: " <b> 6. </b> "
 ---
 
+![alt text](/diagrams/workshop-1-invoke-with-with-cli.drawio.svg)
+
 ### Content:
 
 - [Invoking _create-user_ function with AWS CLI](6.1-invoking-create-user-function)

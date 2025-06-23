@@ -1,5 +1,5 @@
 ---
-title: "Creating DynamoDB table"
+title: "Creating a DynamoDB table"
 weight: 3
 chapter: false
 pre: " <b> 3. </b> "

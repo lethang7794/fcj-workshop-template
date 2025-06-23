@@ -5,6 +5,8 @@ chapter: false
 pre: " <b> 5. </b> "
 ---
 
+![alt text](/diagrams/workshop-1-invoke-with-management-console.drawio.svg)
+
 ### Content:
 
 - [Invoking _create-user_ function with AWS Management Console](5.1-invoking-create-user-function)

@@ -5,8 +5,6 @@ chapter: false
 pre: " <b> 1. </b> "
 ---
 
-## Introduction
-
 {{<figure src="/images/workshop-1/AWS-Lambda.svg" title="AWS Lambda" width=150pc >}}
 
 **AWS Lambda** is a _serverless compute service_.
