@@ -1,5 +1,5 @@
 ---
-title: "Invoking Lambda functions with Lambda function Url"
+title: "Invoking Lambda functions with Lambda function URL"
 weight: 8
 chapter: false
 pre: " <b> 8. </b> "

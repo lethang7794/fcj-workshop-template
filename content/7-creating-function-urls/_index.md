@@ -17,7 +17,11 @@ You can control access to your Lambda function URLs using the AuthType parameter
   - `AWS_IAM` – Lambda uses AWS Identity and Access Management (IAM) to authenticate and authorize requests based on the IAM principal's identity policy and the function's resource-based policy. Choose this option if you want only authenticated users and roles to invoke your function via the function URL.
   - `NONE` – Lambda doesn't perform any authentication before invoking your function. However, your function's resource-based policy is always in effect and must grant public access before your function URL can receive requests. Choose this option to allow public, unauthenticated access to your function URL.
 
-In this workshop, we will create functions URL with `AuthType` of `NONE`.
+> [!NOTE]
+> In this workshop, to simplify the learning we will create functions URL with `AuthType` of `NONE` without implementing any authentication mechanism in the Lambda function.
+
+> [!WARNING]
+> Except some rare case that you may want your function URL to be public as a web hook, don't use `AuthType` of `NONE` for your function URL. And in these rare case, you still need to implement basic authentication mechanism in your Lambda function. See [Tutorial: Creating a webhook endpoint using a Lambda function URL - AWS Lambda](https://docs.aws.amazon.com/lambda/latest/dg/urls-webhook-tutorial.html)
 
 #### Creating function URLs
 
