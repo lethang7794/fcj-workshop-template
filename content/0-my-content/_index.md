@@ -1,8 +1,8 @@
 ---
-title: "My content"
-weight: 1
+title: "CRUD with AWS Lambda and Amazon DynamoDB"
+weight: 2
 chapter: false
-pre: " <b> 0. </b> "
+pre: " <b> 0.0. </b> "
 ---
 
 # Workshop 1: CRUD with AWS Lambda and Amazon DynamoDB
@@ -19,14 +19,18 @@ You will also learn about
 
 The high level architecture looks like this:
 
-![alt text](docs/workshop-1-high-level.drawio.svg)
+![alt text](/diagrams/workshop-1-high-level.drawio.svg)
 
 ## Introduction
+
+{{<figure src="/images/workshop-1/AWS-Lambda.svg" title="AWS Lambda" width=150pc >}}
 
 **AWS Lambda** is a _serverless compute service_.
 
 - AWS Lambda runs your code in response to events and automatically manages the underlying compute resources for you,
 - AWS Lambda makes it easier to build applications that respond quickly to new information.
+
+{{<figure src="/images/workshop-1/Amazon-DynamoDB.svg" title="Amazon DynamoDB" width=150pc >}}
 
 **Amazon DynamoDB** is a _serverless, NoSQL database service_ that allows you to develop modern applications at any scale.
 
@@ -36,7 +40,7 @@ The high level architecture looks like this:
 
 - An IAM user with `AdministratorAccess` permissions that you can login with to AWS Management Console.
 
-  ![alt text](<assets/workshop-7/Screenshot From 2025-06-21 16-00-38.png>)
+  ![alt text](/images/workshop-1/IAM-user-login-and-permissions.png)
 
   If you haven't create an IAM user, follow [Create IAM Group and IAM User :: MANAGING ACCESS CONTROL WITH AWS IAM (IDENTITY AND ACCESS MANAGEMENT)](https://000002.awsstudygroup.com/2-create-admin-user-and-group/) to create one.
 
@@ -44,7 +48,7 @@ The high level architecture looks like this:
 
   - Run `aws sts get-caller-identity` to verify it:
 
-    ![alt text](<assets/workshop-7/Screenshot From 2025-06-21 16-07-14.png>)
+    ![alt text](/images/workshop-1/AWS-CLI--verify-credential.png)
 
   - Your output may looks a little bit different than mine.
 
@@ -57,14 +61,14 @@ The high level architecture looks like this:
 - Open the `Tables` section in the navigation drawer.
 - Click `Create table`
 
-  ![alt text](assets/workshop-1/dynamodb-create-table.png)
+  ![alt text](/images/workshop-1/dynamodb-create-table.png)
 
 - In the `Table details` section, enter:
 
   - Table name: `UsersTable`
   - Partition key: `id`
 
-  ![alt text](assets/workshop-1/dynamodb-create-table--detail.png)
+  ![alt text](/images/workshop-1/dynamodb-create-table--detail.png)
 
 - In the `Table settings` section, select `Default settings` which has:
 
@@ -73,11 +77,11 @@ The high level architecture looks like this:
 
 - Click `Create table`
 
-  ![alt text](assets/workshop-1/dynamodb-create-table--default-settings.png)
+  ![alt text](/images/workshop-1/dynamodb-create-table--default-settings.png)
 
 - Wait for Status of the table to change from `Creating` to `Active`.
 
-  ![alt text](assets/workshop-1/dynamodb-create-table--successful.png)
+  ![alt text](/images/workshop-1/dynamodb-create-table--successful.png)
 
 ## Creating Lambda functions
 
@@ -86,7 +90,7 @@ The high level architecture looks like this:
 - Open the [`Functions` section](https://console.aws.amazon.com/lambda/home#/functions) of [Lambda console](https://console.aws.amazon.com/lambda/home)
 - Click `Create function`
 
-  ![alt text](assets/workshop-1/lambda-create-function--functions-page.png)
+  ![alt text](/images/workshop-1/lambda-create-function--functions-page.png)
 
 - Choose `Author from scratch`
 - In the `Basic information` section, enter:
@@ -96,11 +100,11 @@ The high level architecture looks like this:
   - Permissions - `Change default execution role`: Keep `Create a new role with basic Lambda permissions` to let Lambda create new execution role for the function.
 - Click `Create function`
 
-  ![alt text](assets/workshop-1/lambda-create-function--options.png)
+  ![alt text](/images/workshop-1/lambda-create-function--options.png)
 
 - After the function is created, you will be redirected to the detail page for the function.
 
-  ![alt text](assets/workshop-1/lambda-create-function--function-detail.png)
+  ![alt text](/images/workshop-1/lambda-create-function--function-detail.png)
 
 - In the `Code` tab, `Code source` section:
 
@@ -182,23 +186,23 @@ The high level architecture looks like this:
 
   - Click `Deploy (Ctrl + Shift + U)` to deploy the lambda function.
 
-    ![alt text](assets/workshop-1/lambda-create-function--source-code-and-deploy.png)
+    ![alt text](/images/workshop-1/lambda-create-function--source-code-and-deploy.png)
 
 - Open the `Configuration` tab
 - Open the `Permissions` section
 - In the `Execution Role`, click on the role name `create-user-role-XXXXXXXX` to open the page of the IAM role.
 
-  ![alt text](assets/workshop-1/lambda-create-function--execution-role.png)
+  ![alt text](/images/workshop-1/lambda-create-function--execution-role.png)
 
 - In the page of the IAM role, `Permissions` tab, click the `Add permissions` button, choose `Attach Polices`.
 
-  ![alt text](assets/workshop-1/lambda-create-function--attach-permission-policy.png)
+  ![alt text](/images/workshop-1/lambda-create-function--attach-permission-policy.png)
 
 - Search for `AmazonDynamoDBFullAccess` policy.
 - Select `AmazonDynamoDBFullAccess` policy.
 - Click `Add permissions` to attach the IAM policy to the IAM Role.
 
-  ![alt text](assets/workshop-1/lambda-create-function--permission-policy-for-dynamodb.png)
+  ![alt text](/images/workshop-1/lambda-create-function--permission-policy-for-dynamodb.png)
 
 ### Creating `list-users` function
 
@@ -481,17 +485,17 @@ Repeat the steps in [creating `create-users` function](#creating-create-user-fun
 
 At this point, check [Functions section of Lambda console](https://console.aws.amazon.com/lambda/home?#/functions) and verify you have 5 Lambda functions.
 
-![alt text](assets/workshop-1/lambda--list-functions.png)
+![alt text](/images/workshop-1/lambda--list-functions.png)
 
 The architecture now looks like this:
 
-![alt text](docs/workshop-1-low-level.drawio.svg)
+![alt text](/diagrams/workshop-1-low-level.drawio.svg)
 
 ## Invoking the Lambda functions
 
 ### Using Lambda management console (testing the Lambda functions)
 
-![alt text](docs/workshop-1-invoke-with-management-console.drawio.svg)
+![alt text](/diagrams/workshop-1-invoke-with-management-console.drawio.svg)
 
 #### Invoking `create-user` with management console
 
@@ -513,16 +517,16 @@ The architecture now looks like this:
 
 - Click `Save`
 
-  ![alt text](assets/workshop-1/lambda-invoke-with-console--test-event.png)
+  ![alt text](/images/workshop-1/lambda-invoke-with-console--test-event.png)
 
 - Click `Test`
 - In the `Execution functions` banner, click `Details`.
 
-  ![alt text](assets/workshop-1/lambda-invoke-with-console--invoke.png)
+  ![alt text](/images/workshop-1/lambda-invoke-with-console--invoke.png)
 
 - You can check the response of the Lambda function and information about the execution of the Lambda function
 
-  ![alt text](assets/workshop-1/lambda-invoke-with-console--exection-detail.jpg)
+  ![alt text](/images/workshop-1/lambda-invoke-with-console--exection-detail.jpg)
 
 - Verify that a new user is created in DynamoDB table `UsersTable`
 
@@ -531,7 +535,7 @@ The architecture now looks like this:
   - The Scan operation should be automatically run.
   - Verify that a new user is created (in other words, a new DynamoDB item is created.)
 
-  ![alt text](assets/workshop-1/lambda-invoke-with-console--verify-user-created.jpg)
+  ![alt text](/images/workshop-1/lambda-invoke-with-console--verify-user-created.jpg)
 
 ---
 
@@ -572,7 +576,7 @@ The architecture now looks like this:
   - Click Refresh button
   - Verify that there are 5 items in the DynamoDB table.
 
-    ![alt text](assets/workshop-1/lambda-invoke-with-console--verify-dynamodb-items.jpg)
+    ![alt text](/images/workshop-1/lambda-invoke-with-console--verify-dynamodb-items.jpg)
 
 #### Invoking `list-user` with management console
 
@@ -581,11 +585,11 @@ The architecture now looks like this:
 - Open the `Test` tab.
 - Click the `Test` button.
 
-  ![alt text](assets/workshop-1/lambda-invoke-with-console--list-users.jpg)
+  ![alt text](/images/workshop-1/lambda-invoke-with-console--list-users.jpg)
 
 - Verify that a list of users are returned.
 
-  ![alt text](assets/workshop-1/lambda-invoke-with-console--list-users-execution.jpg)
+  ![alt text](/images/workshop-1/lambda-invoke-with-console--list-users-execution.jpg)
 
 #### Invoking `get-user` with management console
 
@@ -609,11 +613,11 @@ The architecture now looks like this:
 - Click `Save`
 - Click the `Test` button.
 
-  ![alt text](assets/workshop-1/lambda-invoke-with-console--get-user-event.jpg)
+  ![alt text](/images/workshop-1/lambda-invoke-with-console--get-user-event.jpg)
 
 - Verify that the user is returned.
 
-  ![alt text](assets/workshop-1/lambda-invoke-with-console--get-user-detail.jpg)
+  ![alt text](/images/workshop-1/lambda-invoke-with-console--get-user-detail.jpg)
 
 #### Invoking `update-user` with management console
 
@@ -639,7 +643,7 @@ The architecture now looks like this:
 - Click `Save`
 - Click the `Test` button.
 
-  ![alt text](assets/workshop-1/lambda-invoke-with-console--update-user-event.jpg)
+  ![alt text](/images/workshop-1/lambda-invoke-with-console--update-user-event.jpg)
 
 - Verify that the user is updated.
 
@@ -650,7 +654,7 @@ The architecture now looks like this:
     - `Nguyen Van An` is updated to `Nguyen Van Anh`
     - `nguyenvanan@gmail.com` is updated to `nguyenvananh@gmail.com`
 
-    ![alt text](assets/workshop-1/lambda-invoke-with-console--update-user-verify.jpg)
+    ![alt text](/images/workshop-1/lambda-invoke-with-console--update-user-verify.jpg)
 
 #### Invoking `delete-user` with management console
 
@@ -674,7 +678,7 @@ The architecture now looks like this:
 - Click `Save`
 - Click the `Test` button.
 
-  ![alt text](assets/workshop-1/lambda-invoke-with-console--delete-user-event.jpg)
+  ![alt text](/images/workshop-1/lambda-invoke-with-console--delete-user-event.jpg)
 
 - Verify that the user is updated.
 
@@ -682,11 +686,11 @@ The architecture now looks like this:
   - Click refresh.
   - Verify that `Nguyen Van Anh` is no longer existed.
 
-  ![alt text](assets/workshop-1/lambda-invoke-with-console--delete-user-verify.jpg)
+  ![alt text](/images/workshop-1/lambda-invoke-with-console--delete-user-verify.jpg)
 
 ### Using `AWS CLI` and AWS credentials
 
-![alt text](docs/workshop-1-invoke-with-with-cli.drawio.svg)
+![alt text](/diagrams/workshop-1-invoke-with-with-cli.drawio.svg)
 
 #### Invoking `list-users` using AWS CLI
 
@@ -743,7 +747,7 @@ The architecture now looks like this:
   }
   ```
 
-  ![alt text](assets/workshop-1/lambda-invoke-with-aws-cli--list-users.jpg)
+  ![alt text](/images/workshop-1/lambda-invoke-with-aws-cli--list-users.jpg)
 
 #### Invoking `get-user` using AWS CLI
 
@@ -773,7 +777,7 @@ The architecture now looks like this:
   {"statusCode": 200, "headers": {"Content-Type": "application/json", "Access-Control-Allow-Origin": "*"}, "body": "{\"updated_at\": \"2025-05-14T10:07:42\", \"created_at\": \"2025-05-14T10:07:42\", \"id\": \"6c539686-de1c-4bef-85ef-f68a4b5aabe0\", \"email\": \"nguyenvandong@gmail.com\", \"name\": \"Nguyen Van Dong\"}"}%
   ```
 
-  ![alt text](assets/workshop-1/lambda-invoke-with-aws-cli--get-user.jpg)
+  ![alt text](/images/workshop-1/lambda-invoke-with-aws-cli--get-user.jpg)
 
 #### Invoking `update-user` using AWS CLI
 
@@ -803,7 +807,7 @@ The architecture now looks like this:
   {"statusCode": 200, "headers": {"Content-Type": "application/json", "Access-Control-Allow-Origin": "*"}, "body": "{\"updated_at\": \"2025-05-14T10:45:09\", \"created_at\": \"2025-05-14T10:07:42\", \"email\": \"nguyenvandong@gmail.com\", \"id\": \"6c539686-de1c-4bef-85ef-f68a4b5aabe0\", \"name\": \"Nguyen Van Tay\"}"}%
   ```
 
-  ![alt text](assets/workshop-1/lambda-invoke-with-aws-cli--update-user.jpg)
+  ![alt text](/images/workshop-1/lambda-invoke-with-aws-cli--update-user.jpg)
 
 - To verify that the user is updated, you can
   - Invoke `list-users` again.
@@ -837,7 +841,7 @@ The architecture now looks like this:
   {"statusCode": 204, "headers": {"Content-Type": "application/json", "Access-Control-Allow-Origin": "*"}}%
   ```
 
-  ![alt text](assets/workshop-1/lambda-invoke-with-aws-cli--delete-user.jpg)
+  ![alt text](/images/workshop-1/lambda-invoke-with-aws-cli--delete-user.jpg)
 
 - To verify that the user is no longer existed, you can
   - Invoke `list-users` again.
@@ -853,13 +857,13 @@ The architecture now looks like this:
 
     (This will use the AWS credential of the AWS account the you've logged in).
 
-    ![alt text](docs/workshop-1-invoke-with-management-console-low-level.drawio.svg)
+    ![alt text](/diagrams/workshop-1-invoke-with-management-console-low-level.drawio.svg)
 
   - or use the AWS CLI and the function ARN to invoke the Lambda function.
 
     (This will use the AWS credential that you've configured with AWS CLI).
 
-    ![alt text](docs/workshop-1-invoke-with-with-cli-low-level.drawio.svg)
+    ![alt text](/diagrams/workshop-1-invoke-with-with-cli-low-level.drawio.svg)
 
 - In this step, you will create a _public_ **function URL** (for each Lambda function) and invoke the function using a browser or any HTTP client (e.g. `curl`)
 
@@ -882,7 +886,7 @@ The architecture now looks like this:
 
 #### Creating function URLs
 
-![alt text](docs/workshop-1-function-urls-high-level.drawio.svg)
+![alt text](/diagrams/workshop-1-function-urls-high-level.drawio.svg)
 
 - To create the function URL for `list-users` Lambda function:
 
@@ -894,17 +898,17 @@ The architecture now looks like this:
   - Open the `Function URL` section
   - Click `Create function URL`
 
-    ![alt text](assets/workshop-1/lambda-function-url--create.jpg)
+    ![alt text](/images/workshop-1/lambda-function-url--create.jpg)
 
   - In the `Configure Function URL` page, choose `Auth type` of `NONE`.
 
   - Click `Save`
 
-    ![alt text](assets/workshop-1/lambda-function-url--configure.jpg)
+    ![alt text](/images/workshop-1/lambda-function-url--configure.jpg)
 
   - After the function URL is created, you can see it in the `Function overview` section or in the `Configuration` / `Function URL` section.
 
-    ![alt text](assets/workshop-1/lambda-function-url--location.jpg)
+    ![alt text](/images/workshop-1/lambda-function-url--location.jpg)
 
   - Copy the function URL, you will need it for the next step.
 
@@ -912,7 +916,7 @@ The architecture now looks like this:
 
 #### Invoking `list-users` using `curl`
 
-![alt text](docs/workshop-1-function-urls.drawio.svg)
+![alt text](/diagrams/workshop-1-function-urls.drawio.svg)
 
 > [!NOTE]
 > Replace the URL with the function URL of your `list-users` Lambda function.
@@ -927,7 +931,7 @@ The architecture now looks like this:
   {"users": [{"updated_at": "2025-05-14T10:07:29", "created_at": "2025-05-14T10:07:29", "id": "a3127179-6ba4-4c3b-855a-4f65d4ee6345", "email": "nguyenvancanh@gmail.com", "name": "Nguyen Van Canh"}, {"updated_at": "2025-05-14T10:07:51", "created_at": "2025-05-14T10:07:51", "id": "e1f0cca8-cd19-4d8b-9124-70a63c351e3a", "email": "nguyenvanem@gmail.com", "name": "Nguyen Van Em"}, {"updated_at": "2025-05-14T10:07:15", "created_at": "2025-05-14T10:07:15", "id": "bb15f9cb-1379-4783-9f6f-23616d633d2a", "email": "nguyenvanbinh@gmail.com", "name": "Nguyen Van Binh"}]}%
   ```
 
-  ![alt text](assets/workshop-1/lambda-invoke-with-curl--list-users.jpg)
+  ![alt text](/images/workshop-1/lambda-invoke-with-curl--list-users.jpg)
 
 > [!TIP]
 > The response is JSON, pipe it to `jq` to have it pretty print.
@@ -935,7 +939,7 @@ The architecture now looks like this:
 > [!NOTE]
 > You can invoke the `list-users` Lambda function by open its function URL in a browser.
 >
-> ![alt text](assets/workshop-1/lambda-invoke-with-browser--list-users.jpg)
+> ![alt text](/images/workshop-1/lambda-invoke-with-browser--list-users.jpg)
 
 #### Invoking `get-user` using `curl`
 
@@ -960,7 +964,7 @@ The architecture now looks like this:
   }
   ```
 
-  ![alt text](assets/workshop-1/lambda-invoke-with-curl--get-user.jpg)
+  ![alt text](/images/workshop-1/lambda-invoke-with-curl--get-user.jpg)
 
 > [!IMPORTANT]
 > When invoke the lambda function with a function URL, you can use any HTTP method: GET, POST, DELETE, PATCH, PUT..., Lambda will treat all of them as the same.
@@ -1002,11 +1006,11 @@ The architecture now looks like this:
   {"id": "bcfe3cf9-1607-489e-8501-f99c194e6cc9", "name": "First Cloud Journey", "email": "fcj@example.com", "created_at": "2025-05-14T16:46:29", "updated_at": "2025-05-14T16:46:29"}%
   ```
 
-  ![alt text](assets/workshop-1/lambda-invoke-with-curl--create-user.jpg)
+  ![alt text](/images/workshop-1/lambda-invoke-with-curl--create-user.jpg)
 
 - Verify that a new user is created with DynamoDB console.
 
-  ![alt text](assets/workshop-1/lambda-invoke-with-curl--create-user-verify.jpg)
+  ![alt text](/images/workshop-1/lambda-invoke-with-curl--create-user-verify.jpg)
 
 #### Invoking `update-user` using `curl`
 
@@ -1025,11 +1029,11 @@ The architecture now looks like this:
   {"updated_at": "2025-05-14T16:51:03", "created_at": "2025-05-14T16:46:29", "email": "fcj@aws.com", "id": "bcfe3cf9-1607-489e-8501-f99c194e6cc9", "name": "First Cloud Journey"}%
   ```
 
-  ![alt text](assets/workshop-1/lambda-invoke-with-curl--update-user.jpg)
+  ![alt text](/images/workshop-1/lambda-invoke-with-curl--update-user.jpg)
 
 - Verify that the user is updated with DynamoDB console.
 
-  ![alt text](assets/workshop-1/lambda-invoke-with-curl--update-user-verify.jpg)
+  ![alt text](/images/workshop-1/lambda-invoke-with-curl--update-user-verify.jpg)
 
 #### Invoking `delete-user` using `curl`
 
@@ -1044,14 +1048,14 @@ The architecture now looks like this:
     -d '{ "id": "bcfe3cf9-1607-489e-8501-f99c194e6cc9" }'
   ```
 
-  ![alt text](assets/workshop-1/lambda-invoke-with-curl--delete-user.jpg)
+  ![alt text](/images/workshop-1/lambda-invoke-with-curl--delete-user.jpg)
 
 > [!NOTE]
 > When invoke `delete-user` with `curl` you don't receive any message (The response doesn't have a body).
 
 - Verify the user is deleted with DynamoDB console.
 
-  ![alt text](assets/workshop-1/lambda-invoke-with-curl--delete-user-verify.jpg)
+  ![alt text](/images/workshop-1/lambda-invoke-with-curl--delete-user-verify.jpg)
 
 ## Cleanup
 
@@ -1068,12 +1072,12 @@ You need to cleanup the following resources:
   - Select `UsersTable` table
   - Click `Delete`
 
-    ![alt text](assets/workshop-1/cleanup-dynamodb--resources.jpg)
+    ![alt text](/images/workshop-1/cleanup-dynamodb--resources.jpg)
 
   - Type `confirm`
   - Click `Delete`
 
-    ![alt text](assets/workshop-1/cleanup-dynamodb--confirm.jpg)
+    ![alt text](/images/workshop-1/cleanup-dynamodb--confirm.jpg)
 
 - The **Lambda functions**:
 
@@ -1081,11 +1085,11 @@ You need to cleanup the following resources:
   - Select 5 functions: `create-user`, `list-user`, `get-user`, `update-user`, `delete-user`.
   - Click `Actions`, choose `Delete`.
 
-    ![alt text](assets/workshop-1/cleanup-lambda--resources.jpg)
+    ![alt text](/images/workshop-1/cleanup-lambda--resources.jpg)
 
   - Type `confirm`, click `Delete`.
 
-    ![alt text](assets/workshop-1/cleanup-lambda--confirm.jpg)
+    ![alt text](/images/workshop-1/cleanup-lambda--confirm.jpg)
 
 - The **IAM roles** used as execution roles for Lambda functions
 
@@ -1093,11 +1097,11 @@ You need to cleanup the following resources:
   - Select 5 roles: `create-user-role-XXXXXXX`, `delete-user-role-XXXXXXX`, `get-user-role-XXXXXXX`, `list-users-role-XXXXXXX`, `update-user-role-XXXXXXX`
   - Click `Delete`.
 
-    ![alt text](assets/workshop-1/cleanup-iam-role--resources.jpg)
+    ![alt text](/images/workshop-1/cleanup-iam-role--resources.jpg)
 
   - Type `delete`, click `Delete`
 
-    ![alt text](assets/workshop-1/cleanup-iam-role--confirm.jpg)
+    ![alt text](/images/workshop-1/cleanup-iam-role--confirm.jpg)
 
 ## Summary
 
