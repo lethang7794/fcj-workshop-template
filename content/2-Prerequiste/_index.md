@@ -5,18 +5,18 @@ chapter: false
 pre: " <b> 2. </b> "
 ---
 
-{{% notice info %}}
-You need to create 1 Linux instance on the public subnet and 1 Window instance on the private subnet to perform this lab.
-{{% /notice %}}
+- An IAM user with `AdministratorAccess` permissions that you can login with to AWS Management Console.
 
-To learn how to create EC2 instances and VPCs with public/private subnets, you can refer to the lab:
+  ![alt text](/images/workshop-1/IAM-user-login-and-permissions.png)
 
-- [About Amazon EC2](https://000004.awsstudygroup.com/en/)
-- [Works with Amazon VPC](https://000003.awsstudygroup.com/en/)
+  If you haven't create an IAM user, follow [Create IAM Group and IAM User :: MANAGING ACCESS CONTROL WITH AWS IAM (IDENTITY AND ACCESS MANAGEMENT)](https://000002.awsstudygroup.com/2-create-admin-user-and-group/) to create one.
 
-In order to use System Manager to manage our window instances in particular and our instances in general on AWS, we need to give permission to our instances to be able to work with System Manager. In this preparation, we will also proceed to create an IAM Role to grant permissions to instances that can work with System Manager.
+- AWS CLI installed and configured with the credential for that IAM user.
 
-### Content
+  - Run `aws sts get-caller-identity` to verify it:
 
-- [Prepare VPC and EC2](2.1-createec2/)
-- [Create IAM Role](2.2-createiamrole/)
+    ![alt text](/images/workshop-1/AWS-CLI--verify-credential.png)
+
+  - Your output may looks a little bit different than mine.
+
+  - If you can't run `aws sts get-caller-identity`, follow [Install AWS CLI :: GETTING STARTED WITH THE AWS CLI](https://000011.awsstudygroup.com/3-installcli/).

@@ -1,17 +1,23 @@
 ---
-title: "Session Management"
+title: "CRUD with AWS Lambda and Amazon DynamoDB"
 weight: 1
 chapter: false
 ---
+# CRUD with AWS Lambda and Amazon DynamoDB
 
-# Work with Amazon System Manager - Session Manager
+This workshop will guide you to create a serverless CRUD APIs with only 2 AWS services:
 
-### Overall
+- AWS Lambda
+- Amazon DynamoDB
 
-In this lab, you'll learn the basics and practice of Amazon System Manager - Session Manager
-. Perform creating public and private instance connections.
+You will also learn about
 
-![ConnectPrivate](/images/arc-log.png)
+- _directly_ invoking Lambda functions
+- who can invoke your Lambda functions (aka _access permissions_)
+
+The high level architecture looks like this:
+
+![alt text](/diagrams/workshop-1-high-level.drawio.svg)
 
 ### Content
 

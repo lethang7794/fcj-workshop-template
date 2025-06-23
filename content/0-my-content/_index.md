@@ -5,54 +5,7 @@ chapter: false
 pre: " <b> 0.0. </b> "
 ---
 
-# Workshop 1: CRUD with AWS Lambda and Amazon DynamoDB
 
-This workshop will guide you to create a serverless CRUD APIs with only 2 AWS services:
-
-- AWS Lambda
-- Amazon DynamoDB
-
-You will also learn about
-
-- _directly_ invoking Lambda functions
-- who can invoke your Lambda functions (aka _access permissions_)
-
-The high level architecture looks like this:
-
-![alt text](/diagrams/workshop-1-high-level.drawio.svg)
-
-## Introduction
-
-{{<figure src="/images/workshop-1/AWS-Lambda.svg" title="AWS Lambda" width=150pc >}}
-
-**AWS Lambda** is a _serverless compute service_.
-
-- AWS Lambda runs your code in response to events and automatically manages the underlying compute resources for you,
-- AWS Lambda makes it easier to build applications that respond quickly to new information.
-
-{{<figure src="/images/workshop-1/Amazon-DynamoDB.svg" title="Amazon DynamoDB" width=150pc >}}
-
-**Amazon DynamoDB** is a _serverless, NoSQL database service_ that allows you to develop modern applications at any scale.
-
-- As a serverless database, you only pay for what you use and DynamoDB scales to zero, has no cold starts, no version upgrades, no maintenance windows, no patching, and no downtime maintenance.
-
-## Prerequisite
-
-- An IAM user with `AdministratorAccess` permissions that you can login with to AWS Management Console.
-
-  ![alt text](/images/workshop-1/IAM-user-login-and-permissions.png)
-
-  If you haven't create an IAM user, follow [Create IAM Group and IAM User :: MANAGING ACCESS CONTROL WITH AWS IAM (IDENTITY AND ACCESS MANAGEMENT)](https://000002.awsstudygroup.com/2-create-admin-user-and-group/) to create one.
-
-- AWS CLI installed and configured with the credential for that IAM user.
-
-  - Run `aws sts get-caller-identity` to verify it:
-
-    ![alt text](/images/workshop-1/AWS-CLI--verify-credential.png)
-
-  - Your output may looks a little bit different than mine.
-
-  - If you can't run `aws sts get-caller-identity`, follow [Install AWS CLI :: GETTING STARTED WITH THE AWS CLI](https://000011.awsstudygroup.com/3-installcli/).
 
 ## Creating a DynamoDB table
 
