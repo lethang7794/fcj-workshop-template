@@ -1,9 +1,9 @@
 ---
 title: Notice
-description : "Message pour vous aider à structurer votre contenu"
+description: "Message pour vous aider à structurer votre contenu"
 ---
 
-Le shortcode *Notice* permet d'afficher 4 types de message pour vous aider à structurer votre contenu.
+Le shortcode _Notice_ permet d'afficher 4 types de message pour vous aider à structurer votre contenu.
 
 ### Note
 
@@ -16,7 +16,7 @@ Une notice de type *note*
 s'affiche comme
 
 {{% notice note %}}
-Une notice de type *note*
+Une notice de type _note_
 {{% /notice %}}
 
 ### Info
@@ -30,7 +30,7 @@ Une notice de type *info*
 s'affiche comme
 
 {{% notice info %}}
-Une notice de type *info*
+Une notice de type _info_
 {{% /notice %}}
 
 ### Tip
@@ -44,7 +44,7 @@ Une notice de type *tip*
 s'affiche comme
 
 {{% notice tip %}}
-Une notice de type *tip*
+Une notice de type _tip_
 {{% /notice %}}
 
 ### Warning
@@ -58,5 +58,5 @@ Une notice de type *warning*
 s'affiche comme
 
 {{% notice warning %}}
-Une notice de type *warning*
+Une notice de type _warning_
 {{% /notice %}}

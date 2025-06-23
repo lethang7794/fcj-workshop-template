@@ -18,7 +18,7 @@
 - [**enhancement**] Fix type lines 364 and 369 [#304](https://github.com/matcornic/hugo-theme-learn/pull/304)
 - [**enhancement**] remove unneeded type="text/css" [#298](https://github.com/matcornic/hugo-theme-learn/pull/298)
 - [**enhancement**] HTTPS links in footer [#295](https://github.com/matcornic/hugo-theme-learn/pull/295)
-- [**enhancement**] remove unneeded  type="text/css" [#292](https://github.com/matcornic/hugo-theme-learn/pull/292)
+- [**enhancement**] remove unneeded type="text/css" [#292](https://github.com/matcornic/hugo-theme-learn/pull/292)
 - [**enhancement**] Make shortcodes & example site compatible with Hugo v0.55 [#281](https://github.com/matcornic/hugo-theme-learn/pull/281)
 
 #### Internationalisation
@@ -110,7 +110,7 @@
 #### Internationalisation
 
 - [**i18n**] Clean up the English language phrasing [#146](https://github.com/matcornic/hugo-theme-learn/pull/146)
-- [**i18n**] Updated _index.en.md for typo "names" [#150](https://github.com/matcornic/hugo-theme-learn/pull/150)
+- [**i18n**] Updated \_index.en.md for typo "names" [#150](https://github.com/matcornic/hugo-theme-learn/pull/150)
 
 #### Theme Meta
 
@@ -123,8 +123,8 @@
 - [**closed**] Improved variant of #119, as per request [#124](https://github.com/matcornic/hugo-theme-learn/pull/124)
 - [**closed**] role="" is invalid [#121](https://github.com/matcornic/hugo-theme-learn/pull/121)
 - [**closed**] Related to previous PR [#120](https://github.com/matcornic/hugo-theme-learn/pull/120)
-- [**closed**] Issue #111 for _index.fr.md [#117](https://github.com/matcornic/hugo-theme-learn/pull/117)
-- [**closed**] Issue #111 for _index.en.md [#116](https://github.com/matcornic/hugo-theme-learn/pull/116)
+- [**closed**] Issue #111 for \_index.fr.md [#117](https://github.com/matcornic/hugo-theme-learn/pull/117)
+- [**closed**] Issue #111 for \_index.en.md [#116](https://github.com/matcornic/hugo-theme-learn/pull/116)
 - [**closed**] Issue #111 for theme-green.css [#114](https://github.com/matcornic/hugo-theme-learn/pull/114)
 - [**closed**] Issue #111 for theme-red.css [#113](https://github.com/matcornic/hugo-theme-learn/pull/113)
 - [**closed**] Issue #111 for theme-blue.css [#112](https://github.com/matcornic/hugo-theme-learn/pull/112)
@@ -132,7 +132,7 @@
 - [**closed**] fix #77 : no wrap images that already wrapped [#118](https://github.com/matcornic/hugo-theme-learn/pull/118)
 - [**closed**] doc: Keep icons aligned [#110](https://github.com/matcornic/hugo-theme-learn/pull/110)
 - [**closed**] Add Portuguese translation [#109](https://github.com/matcornic/hugo-theme-learn/pull/109)
-- [**closed**] Use `relURL`  where possible [#102](https://github.com/matcornic/hugo-theme-learn/pull/102)
+- [**closed**] Use `relURL` where possible [#102](https://github.com/matcornic/hugo-theme-learn/pull/102)
 - [**closed**] Bug fix in sidebar menu and children description generation [#105](https://github.com/matcornic/hugo-theme-learn/pull/105)
 - [**closed**] fix some typo [#104](https://github.com/matcornic/hugo-theme-learn/pull/104)
 - [**closed**] Added a `menuTitle` attribute to partials/menu.html [#90](https://github.com/matcornic/hugo-theme-learn/pull/90)

@@ -1,9 +1,10 @@
 ---
-title : "Introduction"
-weight : 1 
-chapter : false
-pre : " <b> 1. </b> "
+title: "Introduction"
+weight: 1
+chapter: false
+pre: " <b> 1. </b> "
 ---
+
 **Session Manager** is a function within the AWS System Manager service, SSM provides verifiable and secure version management without opening incoming ports, without Bastion Host or SSH key management. Session Manager also makes it easy to comply with corporate policies that require controlled access to instances, strict security practices, and fully auditable logs with instance access details, while still providing end-users with one-click cross-platform access to your managed instances.
 
 By using Session Manager, you get the following advantages that traditional methods do not have:
@@ -16,5 +17,5 @@ By using Session Manager, you get the following advantages that traditional meth
 - Faster access time than traditional methods like SSH
 - Support many different operating systems such as Linux, Windows, MacOS
 - Log the connection sessions and commands executed while connecting to the server.
-  
-With the above advantages, you can use Session Manager instead of using Bastion host technique to save us time and money when managing Bastion server. 
+
+With the above advantages, you can use Session Manager instead of using Bastion host technique to save us time and money when managing Bastion server.

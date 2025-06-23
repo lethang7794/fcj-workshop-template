@@ -1,9 +1,9 @@
 ---
 title: Button (Bouton)
-description : "De beaux boutons sur votre page."
+description: "De beaux boutons sur votre page."
 ---
 
-Le shortcode *button* est simplement un bouton cliquable avec une icône optionnelle.
+Le shortcode _button_ est simplement un bouton cliquable avec une icône optionnelle.
 
 ```
 {{%/* button href="https://getgrav.org/" */%}}Téléchargez Grav{{%/* /button */%}}
