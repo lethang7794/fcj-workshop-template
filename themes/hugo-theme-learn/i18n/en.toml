@@ -28,5 +28,8 @@ other = "Expand me..."
 [Content]
 other = "Content"
 
+[TOC]
+other = "Table of Content"
+
 [Last-updated]
 other = "Last updated"
