@@ -28,4 +28,22 @@
   #TableOfContents > ul > li > ul > li > ul > li > ul > li > ul > li {
     display: none;
   }
+
+  #TableOfContents li:not(:has(a)) {
+    list-style-type: none;
+  }
+
+  #TableOfContents li {
+    list-style-type: none;
+  }
+  #TableOfContents li:has(> a) {
+    list-style-type: disc;
+  }
+
+  #TableOfContents ul {
+    padding-left: 0;
+  }
+  #TableOfContents ul:has(> li > a) {
+    padding-left: 40px;
+  }
 </style>

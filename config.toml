@@ -44,3 +44,8 @@ weight     = 20
 [markup.goldmark.parser]
 [markup.goldmark.parser.attribute]
 block = true
+
+[markup.tableOfContents]
+endLevel   = 6
+ordered    = false
+startLevel = 2
