@@ -46,4 +46,12 @@
   #TableOfContents ul:has(> li > a) {
     padding-left: 40px;
   }
+
+  p:has(+ nav) {
+    display: none;
+  }
+  p:has(+ nav > ul) {
+    display: block;
+    margin-bottom: 12px;
+  }
 </style>
