@@ -1,12 +1,12 @@
 ---
-title: "CRUD with AWS Lambda and Amazon DynamoDB"
+title: "Serverless CRUD API with AWS Lambda and function URLs"
 weight: 1
 chapter: false
 ---
 
-# CRUD with AWS Lambda and Amazon DynamoDB
+# Serverless CRUD API with AWS Lambda and function URLs
 
-This workshop will guide you to create a serverless CRUD APIs with only 2 AWS services:
+This workshop will guide you to create a serverless CRUD API with only 2 AWS services:
 
 - AWS Lambda
 - Amazon DynamoDB
