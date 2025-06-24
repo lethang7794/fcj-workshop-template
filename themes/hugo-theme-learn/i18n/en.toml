@@ -24,3 +24,9 @@ other = "More"
 
 [Expand-title]
 other = "Expand me..."
+
+[Content]
+other = "Content"
+
+[Last-updated]
+other = "Last updated"
