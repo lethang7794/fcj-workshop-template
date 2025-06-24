@@ -30,6 +30,6 @@ The high level architecture looks like this:
 5. [Invoking Lambda functions with AWS Management Console](5-invoking-lambda-functions-with-aws-management-console)
 6. [Invoking Lambda functions with AWS CLI](6-invoking-lambda-functions-with-aws-cli)
 7. [Creating functions URLs](7-creating-function-urls)
-8. [Invoking Lambda functions with Lambda function Url](8-invoking-lambda-functions-with-lambda-function-url)
+8. [Invoking Lambda functions with Lambda function URL](8-invoking-lambda-functions-with-lambda-function-url)
 9. [Clean up resources](9-clean-up-resources)
 10. [Summary](10-summary)
