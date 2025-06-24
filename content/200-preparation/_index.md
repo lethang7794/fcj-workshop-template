@@ -18,8 +18,3 @@ In order to use System Manager to manage our window instances in particular and 
 ### Content
   - [Prepare VPC and EC2](2.1-createec2/)
   - [Create IAM Role](2.2-createiamrole/)
-
-<!-- TOC - begin -->
-- [Preparing VPC and EC2](20-preparation/2.1-createec2)
-- [Create IAM Role](20-preparation/2.2-createiamrole)
-<!-- TOC - end -->

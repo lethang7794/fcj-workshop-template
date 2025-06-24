@@ -1,0 +1,23 @@
+{
+  "name": "fcj-example-workshop",
+  "version": "1.0.0",
+  "description": "The [example workshop](https://van-hoang-kha.github.io/2-prerequiste/2.1-downloadhugotheme/) in [Guide for building a workshop](https://van-hoang-kha.github.io/) for First Cloud Journey is current broken because:",
+  "homepage": "https://github.com/lethang7794/fcj-example-workshop#readme",
+  "bugs": {
+    "url": "https://github.com/lethang7794/fcj-example-workshop/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/lethang7794/fcj-example-workshop.git"
+  },
+  "license": "ISC",
+  "author": "",
+  "type": "commonjs",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "gray-matter": "^4.0.3"
+  }
+}
