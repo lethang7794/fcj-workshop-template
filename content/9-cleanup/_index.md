@@ -5,6 +5,8 @@ chapter = false
 pre = "<b>9. </b>"
 +++
 
+{{% toc %}}
+
 > [!NOTE]
 > If you want to do the next workshop in the series, keep these resources.
 
