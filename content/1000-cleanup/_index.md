@@ -1,8 +1,8 @@
 +++
 title = "Cleanup"
-weight = 6
+weight = 10
 chapter = false
-pre = "<b>6. </b>"
+pre = "<b>10. </b>"
 +++
 
 ## TODO: Delete service A resources
