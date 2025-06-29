@@ -53,7 +53,7 @@ jobs:
         run: |
           find content -type f \( -name "_index.vi.md" -o -name "_index.md" \) -exec sed -i "s|](\/images|](\/${WORKSHOP_PATH}\/images|g" {} +
           find content -type f \( -name "_index.vi.md" -o -name "_index.md" \) -exec sed -i "s|](\/diagrams|](\/${WORKSHOP_PATH}\/diagrams|g" {} +
-          find content -type f \( -name "_index.vi.md" -o -name "_index.md" \) -exec sed -i "s|figure src=\"\/images|figure src=\"\/{WORKSHOP_PATH}\/images|g" {} +
+          find content -type f \( -name "_index.vi.md" -o -name "_index.md" \) -exec sed -i "s|figure src=\"\/images|figure src=\"\/WORKSHOP_PATH\/images|g" {} +
           find content -type f \( -name "_index.vi.md" -o -name "_index.md" \) -exec sed -i "s|WORKSHOP_PATH|$WORKSHOP_PATH|g" {} +
       - name: Change home path
         run: |
