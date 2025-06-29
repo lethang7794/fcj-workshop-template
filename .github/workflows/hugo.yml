@@ -52,6 +52,8 @@ jobs:
       - name: Change image links
         run: |
           find content -type f \( -name "_index.vi.md" -o -name "_index.md" \) -exec sed -i "s/](\/images\//](\/${WORKSHOP_PATH}\/images\//g" {} +
+          find content -type f \( -name "_index.vi.md" -o -name "_index.md" \) -exec sed -i "s/](\/diagrams\//](\/${WORKSHOP_PATH}\/diagrams\//g" {} +
+          find content -type f \( -name "_index.vi.md" -o -name "_index.md" \) -exec sed -i "s/figure src="\/images\//figure src="\/${WORKSHOP_PATH}\/images\//g" {} +
       - name: Change home path
         run: |
           find layouts -type f \( -name "logo.html" -o -name "logo.html" \) -exec sed -i "s/\/fcj-workshop-home\//\/${WORKSHOP_PATH}\//g" {} +
@@ -79,4 +81,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
