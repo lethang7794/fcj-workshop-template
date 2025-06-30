@@ -31,7 +31,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     env:
-      HUGO_VERSION: 0.128.0
+      HUGO_VERSION: 0.147.9
       WORKSHOP_PATH: ${{ github.event.repository.name }}
     steps:
       - name: Install Hugo CLI
@@ -51,10 +51,12 @@ jobs:
         run: "[[ -f package-lock.json || -f npm-shrinkwrap.json ]] && npm ci || true"
       - name: Change image links
         run: |
-          find content -type f \( -name "_index.vi.md" -o -name "_index.md" \) -exec sed -i "s/](\/images\//](\/${WORKSHOP_PATH}\/images\//g" {} +
+          find content -type f \( -name "_index.vi.md" -o -name "_index.md" \) -exec sed -i "s|](\/images|](\/${WORKSHOP_PATH}\/images|g" {} +
+          find content -type f \( -name "_index.vi.md" -o -name "_index.md" \) -exec sed -i "s|figure src=\"\/images|figure src=\"\/WORKSHOP_PATH\/images|g" {} +
+          find content -type f \( -name "_index.vi.md" -o -name "_index.md" \) -exec sed -i "s|WORKSHOP_PATH|$WORKSHOP_PATH|g" {} +
       - name: Change home path
         run: |
-          find layouts -type f \( -name "logo.html" -o -name "logo.html" \) -exec sed -i "s/\/fcj-workshop-home\//\/${WORKSHOP_PATH}\//g" {} +
+          find layouts -type f \( -name "logo.html" -o -name "logo.html" \) -exec sed -i "s|href=\"\/|href=\"\/${WORKSHOP_PATH}|g" {} +
       - name: Build with Hugo
         env:
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
@@ -79,4 +81,3 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
-
