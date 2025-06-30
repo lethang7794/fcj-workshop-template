@@ -19,4 +19,4 @@ You will also learn about
 
 The high level architecture looks like this:
 
-![alt text](/diagrams/workshop-1-high-level.drawio.svg)
+![alt text](/images/diagrams/workshop-1-high-level.drawio.svg)

@@ -29,7 +29,7 @@ You can control access to your Lambda function URLs using the AuthType parameter
 
 In this step, you will create 5 function URLs, one for each Lambda function.
 
-![alt text](/diagrams/workshop-1-function-urls-high-level.drawio.svg)
+![alt text](/images/diagrams/workshop-1-function-urls-high-level.drawio.svg)
 
 1. To create the function URL for `list-users` Lambda function:
 
