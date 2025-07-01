@@ -1,5 +1,6 @@
 # Change the default theme to be use when building the site with Hugo
-theme = "hugo-theme-learn"
+theme         = "hugo-theme-learn"
+enableGitInfo = true
 
 # For search functionality
 [outputs]
@@ -49,3 +50,6 @@ block = true
 endLevel   = 6
 ordered    = false
 startLevel = 2
+
+[frontmatter]
+lastmod = [ "lastmod", ":git", "date", "publishDate" ]

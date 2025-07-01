@@ -10,8 +10,9 @@
   <br />
   <br />
   <b> {{T "Last-updated"}} </b> <br />
-  <i><font color="orange">23-06-2025</font></i>
   <!-- TODO: update workshop last updated date -->
+  <i><font color="orange">{{ .Site.Lastmod | time.Format "02-01-2006" }}</font></i>
+  <div style="display: none;">{{ .GitInfo.AbbreviatedHash }}</div>
 
 </left>
 <left>
@@ -29,11 +30,11 @@
       >Hoàng Kha
     </a>
     <br />
-    <a href="https://www.linkedin.com/in/vanhoangkha/" style="color: orange"
+    <a href="#" style="color: orange"
       >TODO: Your Name
     </a>
     <br />
-    <!-- TODO: update workshop contributors -->
+    <!-- TODO: update workshop contributors: Your name and your LinkedIn profile URL -->
   </i>
 </left>
 <!-- Place this tag in your head or just before your close body tag. -->
