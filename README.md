@@ -3,15 +3,12 @@
 > [!NOTE]
 > This template is based on the [original example workshop](https://van-hoang-kha.github.io/2-prerequiste/2.1-downloadhugotheme/), but:
 >
-> - Works with current version of Hugo (`v0.147.9` at 2025-07-01), see [1](#the-problem-of-the-original-example-workshop)
-> - Has some improvement, see [2](#improvement-from-original-example-workshop)
+> - Works with current version of Hugo (`v0.147.9` at 2025-07-01).
+> - Has some improvements.
 
 ---
 
-<details>
-<summary>
-The problem of the original example workshop
-</summary>
+<details><summary>The state of the original example workshop</summary>
 
 The [example workshop](https://van-hoang-kha.github.io/2-prerequiste/2.1-downloadhugotheme/) in [Guide for building a workshop](https://van-hoang-kha.github.io/) for First Cloud Journey is current broken because:
 
@@ -23,7 +20,9 @@ The [example workshop](https://van-hoang-kha.github.io/2-prerequiste/2.1-downloa
 
    ![2](https://i.imgur.com/utrovTV.png)
 
-### The solution
+---
+
+The solutions:
 
 | Problem                                      | Solution                                                                                                                                                                                                                                                                                             |
 | -------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
@@ -32,46 +31,90 @@ The [example workshop](https://van-hoang-kha.github.io/2-prerequiste/2.1-downloa
 
 </details>
 
-<details>
-<summary>
-Improvement from original example workshop
-</summary>
+## What's changed
 
-- Support markdown syntax for Alert (you don't need to use Hugo's notice).
+- Support markdown syntax for Alert (you can still use Hugo's notice).
+
+  ![alt text](content/1000-example-workshop/template-docs/github-alert.png)
 
 - Automated create Table of content for each section.
 
+  Example 1:
+  - ![alt text](content/1000-example-workshop/template-docs/toc-example-1.png)
+
+  Example 2:
+  - ![alt text](content/1000-example-workshop/template-docs/toc-example-2.png)
+
+  Example 3:
+  - ![alt text](content/1000-example-workshop/template-docs/toc-example-3.png)
+
 - Support shortcode for creating table of content for a page.
 
-- Preview markdown images in IDE (you don't need to run `hugo server`).
+  ```
+  {{% toc %}}
+  ```
 
-- Include a GitHub Action workflow to publish the workshop as GitHub Page.
+  Output:
+  ![alt text](content/1000-example-workshop/template-docs/toc-in-this-page.png)
 
-</details>
+- Include a GitHub Action workflow to publish the workshop as GitHub Pages.
 
-<details><summary>
-How to use this example workshop
-</summary>
-
-1. Use this workshop as a template
-
-   [Click this link to create a GitHub repository using this template](https://github.com/new?template_name=fcj-example-workshop&template_owner=lethang7794)
-
-2. Download example workshop
-
-   [Click this link to download the example workshop as a zip file](https://github.com/lethang7794/fcj-example-workshop/archive/refs/heads/main.zip).
+  ![alt text](content/1000-example-workshop/template-docs/github-workflow.png)
 
 </details>
 
-<details>
-<summary>
-How to publish this workshop as a GitHub Page?
-</summary>
+## How to get started?
 
-The only thing you need to do is verify the repository has Pages enabled and configured to build using GitHub Actions.
+1. Use this workshop as a template for your GitHub repository [by click here](https://github.com/new?template_name=fcj-example-workshop&template_owner=lethang7794).
+2. Go to your GitHub repository / `Settings` / `Pages` section / `Build and deployment`.
 
-- Open your GitHub repository's _Setting_ tab.
-- Under _Code and automation_ group, open _Pages_ section.
-- Under _Build and deployment_, select _GitHub Actions_ as the _Source_.
+   ![alt text](content/1000-example-workshop/github-pages-deployment-source.png)
+
+   Change `Source` from `Deploy from a branch` to `GitHub Actions`.
+
+   ![alt text](content/1000-example-workshop/github-pages-setting.png)
+
+3. Clone your GitHub repository to your local machine (or from your GitHub repository, press `.` on your keyboard)
+4. Make some changes
+
+   ```bash
+   echo "# My awesome FCJ workshop" > README.md
+   ```
+
+5. Commit and push to your GitHub repository.
+
+   ```bash
+   git add README.md
+   git commit -m "update README"
+   git push origin main
+   ```
+
+6. Visit your workshop that's deployed as a GitHub Pages.
+
+> [!NOTE]
+> To access your workshop as the GitHub Pages
+>
+> - Open your GitHub repository page, e.g. <a href="https://github.com/<YOUR_USERNAME>/<YOUR_REPO>">https://github.com/<YOUR_USERNAME>/<YOUR_REPO></a>
+> - Scroll to the bottom, in the `Deployments` on the right side, click on `github-pages (... ago)`
+>
+>   ![alt text](content/1000-example-workshop/github-repo-deployment.png)
+>
+> - You will see the URL for your repository's GitHub Pages.
+>
+>   ![alt text](content/1000-example-workshop/gitgub-pages-url.png)
+
+## Tips and tricks
+
+<details><summary>How to preview images while editing markdown using an IDE?</summary>
+
+![alt](content/1000-example-workshop/template-docs/preview-image-in-IDE.png)
+
+Create a symbolic link to the `static/images/` in the root of this repo.
+
+```bash
+# In root of your repository
+[ -d images ] && { [ -d images-backup ] && echo "images-backup already exists." && exit 1 || mv images images-backup && echo "Moved images to images-backup."; } || exit 0
+ln -s $PWD/static/images/ $PWD
+```
 
 </details>
