@@ -1,6 +1,6 @@
 ---
 title: "TODO: Section 4.3 - title"
-weight: 1
+weight: 3
 chapter: false
 pre: " <b> 4.3 </b> "
 ---

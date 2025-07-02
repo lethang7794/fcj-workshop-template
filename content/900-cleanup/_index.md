@@ -1,9 +1,9 @@
 +++
-title = "Cleanup"
+title = "Clean up"
 weight = 9
 chapter = false
 pre = "<b>9. </b>"
-# TODO: Update cleanup section number
+# TODO: Update clean up section number
 +++
 
 ## TODO: Delete service A resources
