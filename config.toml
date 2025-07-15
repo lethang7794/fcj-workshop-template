@@ -19,8 +19,7 @@ disableNextPrev   = false
 
 [Languages]
 [Languages.en]
-# TODO: Update workshop title (English)
-title        = "AWS System Manager"
+title        = "TODO: Workshop Title (Hugo Site)" # TODO: Update workshop title (English)
 weight       = 1
 languageName = "English"
 
@@ -31,8 +30,7 @@ url        = "https://www.facebook.com/groups/awsstudygroupfcj/"
 weight     = 20
 
 [Languages.vi]
-# TODO: Update workshop title (Vietnamese)
-title        = "AWS System Manager"
+title        = "TODO: Workshop Vietnamese Title (Hugo Site)" # TODO: Update workshop title (Vietnamese)
 weight       = 2
 languageName = "Tiếng Việt"
 

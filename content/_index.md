@@ -1,10 +1,10 @@
 ---
-title: TODO - Workshop title
+title: TODO - Workshop title (Homepage metatada)
 weight: 1
 chapter: false
 ---
 
-# TODO: WORKSHOP TITLE
+# TODO: WORKSHOP TITLE (In Homepage)
 
 ## TODO: WORKSHOP OVERVIEW
 
